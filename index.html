@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista de tarefas interativa para organizar atividades do dia a dia.">
+  <title>Minha Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-conteudo">
+      <span class="icone" aria-hidden="true">✓</span>
+      <div>
+        <p class="sobretitulo">ORGANIZE SEU DIA</p>
+        <h1>Minha Lista de Tarefas</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="painel" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Adicionar tarefa</h2>
+      <form id="form-tarefa">
+        <label for="entrada-tarefa">O que você precisa fazer?</label>
+        <div class="linha-formulario">
+          <input id="entrada-tarefa" type="text" maxlength="100"
+                 placeholder="Ex.: Estudar para a prova" required>
+          <button type="submit" class="botao-principal">Adicionar</button>
+        </div>
+        <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="painel" aria-labelledby="titulo-lista">
+      <div class="cabecalho-lista">
+        <div>
+          <h2 id="titulo-lista">Suas tarefas</h2>
+          <p id="contador" class="contador">0 tarefas</p>
+        </div>
+        <button id="limpar-concluidas" class="botao-texto" type="button">Limpar concluídas</button>
+      </div>
+
+      <nav class="filtros" aria-label="Filtrar tarefas">
+        <button class="filtro ativo" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+        <button class="filtro" type="button" data-filtro="pendentes" aria-pressed="false">Pendentes</button>
+        <button class="filtro" type="button" data-filtro="concluidas" aria-pressed="false">Concluídas</button>
+      </nav>
+
+      <ul id="lista-tarefas" class="lista-tarefas"></ul>
+      <p id="lista-vazia" class="lista-vazia">Nenhuma tarefa por aqui. Adicione a primeira!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito para deixar sua rotina mais organizada.</p>
+  </footer>
+</body>
+</html>
